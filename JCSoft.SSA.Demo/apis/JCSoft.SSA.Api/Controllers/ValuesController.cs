@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
+namespace JCSoft.SSA.Api.Controllers
+{
+    [Route("api/[controller]")]
+    public class ValuesController : Controller
+    {
+        // GET api/values
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return $"you get id :{id}";
+        }
+
+        // POST api/values
+        [HttpPost]
+        public string Post([FromBody]string value)
+        {
+            return $"post success, value is {value}";
+        }
+
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public string Put(int id, [FromBody]string value)
+        {
+            return $"put success, id:{id}, value:{value}";
+        }
+
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public string Delete(int id)
+        {
+            return $"delete success, id:{id} was deleted";
+        }
+    }
+}
